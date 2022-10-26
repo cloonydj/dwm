@@ -2,12 +2,12 @@
 
 /* appearance */
 static const char font[]            = "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*";
-static const char normbordercolor[] = "#cccccc";
-static const char normbgcolor[]     = "#cccccc";
-static const char normfgcolor[]     = "#000000";
-static const char selbordercolor[]  = "#ffe6ff";
-static const char selbgcolor[]      = "#ffe6ff";
-static const char selfgcolor[]      = "#ffffff";
+static const char normbordercolor[] = "#000000";
+static const char normbgcolor[]     = "#000000";
+static const char normfgcolor[]     = "#cccccc";
+static const char selbordercolor[]  = "#000000";
+static const char selbgcolor[]      = "#000000";
+static const char selfgcolor[]      = "#000000";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = False;     /* False means no bar */
@@ -34,7 +34,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -47,15 +47,19 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "uxterm", NULL };
+static const char *rune[]  = { "runelite", NULL };
+static const char *web[]  = { "firefox", NULL };
+static const char *files[]  = { "thunar", NULL };
+static const char *music[]  = { "mocp", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_f1,     spawn,          {.v = runelite && keepassxc } },
-	{ MODKEY,                       XK_f2,     spawn,          {.v = firefox } },
-	{ MODKEY,                       XK_f3,     spawn,          {.v = thunar } },
-	{ MODKEY,                       XK_f5,     spawn,          {.v = mocp } },
+	{ MODKEY,                       XK_F1,     spawn,          {.v = rune } },
+	{ MODKEY,                       XK_F2,     spawn,          {.v = web } },
+	{ MODKEY,                       XK_F3,     spawn,          {.v = files } },
+	{ MODKEY,                       XK_F5,     spawn,          {.v = music } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
