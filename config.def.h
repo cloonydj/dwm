@@ -51,6 +51,7 @@ static const char *rune[]  = { "runelite", NULL };
 static const char *web[]  = { "firefox", NULL };
 static const char *files[]  = { "thunar", NULL };
 static const char *music[]  = { "mocp", NULL };
+static const char *rofi[]  = { "rofi", "-show", "drun", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -60,6 +61,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_F2,     spawn,          {.v = web } },
 	{ MODKEY,                       XK_F3,     spawn,          {.v = files } },
 	{ MODKEY,                       XK_F5,     spawn,          {.v = music } },
+	{ MODKEY,                       XK_z,      spawn,          {.v = rofi } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
