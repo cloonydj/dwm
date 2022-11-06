@@ -28,9 +28,9 @@ static const Bool resizehints = True; /* True means respect size hints in tiled 
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "Tile",     tile },    /* first entry is default */
+	{ "Float",    NULL },    /* no layout function means floating behavior */
+	{ "Monocle",  monocle },
 };
 
 /* key definitions */
@@ -50,7 +50,7 @@ static const char *termcmd[]  = { "uxterm", NULL };
 static const char *rune[]  = { "runelite", NULL };
 static const char *web[]  = { "firefox", NULL };
 static const char *files[]  = { "thunar", NULL };
-static const char *music[]  = { "mocp", NULL };
+static const char *music[]  = { "uxterm", "mocp", NULL };
 static const char *rofi[]  = { "rofi", "-show", "drun", NULL };
 
 static Key keys[] = {
