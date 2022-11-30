@@ -46,11 +46,11 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "uxterm", NULL };
+static const char *termcmd[]  = { "alacritty", "-e", "fish", NULL };
 static const char *rune[]  = { "runelite", NULL };
 static const char *web[]  = { "firefox", NULL };
 static const char *files[]  = { "thunar", NULL };
-static const char *music[]  = { "uxterm", "mocp", NULL };
+static const char *music[]  = { "alacritty", "-e", "mocp", NULL };
 static const char *rofi[]  = { "rofi", "-show", "drun", NULL };
 
 static Key keys[] = {
